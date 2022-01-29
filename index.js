@@ -4,23 +4,26 @@
  */
 
 // Dependencies
-const { ServerResponse } = require("http");
-var server = require("./lib/server");
-//var workers = require("./lib/workers");
+var server = require('./lib/server');
+var workers = require('./lib/workers');
 
-// Delcare the app
+// Declare the app
 var app = {};
 
-// init function
-app.init = function () {
+// Init function
+app.init = function(){
+
   // Start the server
   server.init();
+
   // Start the workers
   workers.init();
+
 };
 
-//Execute
+// Self executing
 app.init();
+
 
 // Export the app
 module.exports = app;
