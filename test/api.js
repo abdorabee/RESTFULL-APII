@@ -17,7 +17,7 @@ var helpers = {};
 helpers.makeGetRequest = function (path, callback) {
   // Configure the request details
   var requestDetails = {
-    protocal: "http",
+    protocal: "http:",
     hostname: "localhost",
     port: config.httpPort,
     method: "GET",
