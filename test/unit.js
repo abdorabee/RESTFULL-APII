@@ -50,8 +50,8 @@ unit[
 unit["logs.truncate should not throw if the logId doesn't exit"] = function (
   done
 ) {
-  assert.doesNotThrow(function (err) {
-    logs.truncate("I do not exit", function () {
+  assert.doesNotThrow(function () {
+    logs.truncate("I do not exit", function (err) {
       assert.ok(err);
       done();
     });

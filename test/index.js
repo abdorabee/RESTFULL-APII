@@ -3,7 +3,8 @@
  *
  *
  */
-
+// Override the NODE_ENV variables
+process.env.NODE_ENV = "testing";
 // Application logic for the test runner
 _app = {};
 
@@ -12,6 +13,7 @@ _app.tests = {};
 
 // Add on the unit tests
 _app.tests.unit = require("./unit");
+_app.tests.api = require("./api");
 
 // Count all the test
 _app.countTests = function () {
@@ -98,6 +100,7 @@ _app.produceTestReport = function (limit, successes, errors) {
   }
   console.log("");
   console.log("-------------END TEST REPORT --------------");
+  process.exit(0);
 };
 
 // Run the test
