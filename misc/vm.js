@@ -21,5 +21,5 @@ var script = new vm.Script(`
 `);
 
 // Run the script
-script.runInContext(context);
+script.runInNewContext(context);
 console.log(context);
